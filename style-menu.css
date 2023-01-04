@@ -378,3 +378,81 @@ input {
     margin-left: 1rem;
     font-size: 2.5rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    position: relative;
+}
+
+.active {
+    position: fixed;
+    width: 98%;
+    height: 100%;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.431);
+}
+
+#cart {
+    
+    width: 70%;
+    height: 70%;
+    margin:15% auto;
+    margin-bottom: 15%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
