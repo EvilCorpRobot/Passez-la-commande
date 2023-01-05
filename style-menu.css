@@ -22,7 +22,6 @@ body {
     text-decoration: none;
     outline: none; border:none;
     text-transform: capitalize;
-    transition: all .2s linear;
 }
 
 html{
@@ -427,6 +426,7 @@ a{
     border-radius: .5rem;
     cursor: pointer;
     padding:.8rem 3rem;
+    transition: all .2s linear;
 }
 
 .btn:hover{
@@ -474,6 +474,7 @@ a{
     background: #fff;
     border-radius: 50%;
     color:var(--black);
+    transition: all .2s linear;
 }
 
 .menu .box-container .box .image .fa-heart:hover{
