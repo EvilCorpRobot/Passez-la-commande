@@ -26,6 +26,7 @@
 }
 
 .order form .inputBox .input input,
+.order form .inputBox .input #total,
 .order form .inputBox .input textarea{
     background:#eee;
     border-radius: .5rem;
@@ -35,6 +36,7 @@
     text-transform: none;
     margin-bottom: 1rem;
     width:100%;
+    height: 30px;
 }
 
 .order form .inputBox .input input:focus,

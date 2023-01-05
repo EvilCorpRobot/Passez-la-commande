@@ -1,7 +1,8 @@
 const saveCommandLocalStorage = (command) => {
-
+    
 }
 
+const cartContent = document.querySelector(".item-container")
 // recuperer la div content
 const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
@@ -11,6 +12,12 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
     } else {
         popupDiv.classList.remove("hidden")
         popupDiv.classList.add("active")
+
+        document.querySelector("#btnClose").addEventListener("click", (e) => {
+            popupDiv.classList.remove("active")
+            popupDiv.classList.add("hidden")
+        })
+
         if (document.querySelector(".item") != null) {
             document.querySelectorAll(".item").forEach(itemToDelete => {
                 itemToDelete.remove()
@@ -92,7 +99,7 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
     }
 })
 
-const cartContent = document.querySelector(".item-container")
+
 
 localStorage.setItem("totalPrice", 0)
 

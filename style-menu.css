@@ -552,9 +552,20 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
     align-items: center;
     
+}
+
+#btnClose {
+    padding-top: 10px;
+    padding-right: 10px;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+}
+
+#title-cart {
+    margin-top: 70px;
 }
 
 .item-container {
