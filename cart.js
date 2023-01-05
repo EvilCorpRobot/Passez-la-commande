@@ -67,7 +67,9 @@ const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
     if (popupDiv.classList.contains("active")) {
         popupDiv.classList.remove("active")
+        popupDiv.classList.add("hidden")
     } else {
+        popupDiv.classList.remove("hidden")
         popupDiv.classList.add("active")
     }
 })
