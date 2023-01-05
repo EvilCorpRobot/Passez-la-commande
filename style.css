@@ -7,6 +7,7 @@ body {
     overflow-x: hidden;
     height: 100vh;
     font-family: 'Urbanist', sans-serif;
+    min-width: 370px;
 }
 :root{
     --green:#27ae60;
@@ -32,12 +33,14 @@ html{
     
 }
 /*Header*/
+
 header{
     background: white;
     position: fixed;
     width: 100%;
     z-index : 2;
-    box-shadow: 10px 10px 10px solid rgb(0, 0, 0) !important;
+
+    box-shadow: rgb(189, 189, 189) 0px 1px 10px;
 }
 
 header .header-content{
@@ -632,28 +635,14 @@ body {
 }
 
 /*contact*/
+
+
 .contact-container {
-    display: grid;
-    justify-content: space-between;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-contact-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
-}
-
-@media (max-width : 1100px) {
-    .contact-container {
-        display: flex;
-        flex-direction: column;
-}
-    .form {
-        margin: auto;
-        margin-top: 20px;
-    }
-
+    flex-wrap: wrap;
 }
 
 .team-btn {
@@ -682,7 +671,8 @@ contact-container {
 
 .form{
     width:500px;
-    height: fit-content;
+    height: 100%;
+    margin: 2%;
     background: whitesmoke;
     border-radius:8px;
     box-shadow:0 0 10px rgba(0, 0, 0, 0.336);
@@ -748,6 +738,7 @@ contact-container {
 iframe {
     box-shadow:0 0 10px rgba(0, 0, 0, 0.336);
     border-radius: 15px;
+    height: 490px;
 }
 
 @media (max-width: 768px){
@@ -755,8 +746,9 @@ iframe {
         padding: 5%;
     }
 
-    iframe, .form{
+    iframe, .form, .contact-formulaire, .contact-map{
         width: 100%;
+        margin: 10px 0;
     }
 
     .form{
@@ -766,6 +758,10 @@ iframe {
     .form h2{
         width: 100%;
         text-align: center;
+    }
+
+    .contact-container{
+        flex-direction: column;
     }
 
     .contact-formulaire button{
