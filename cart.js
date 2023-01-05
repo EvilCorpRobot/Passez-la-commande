@@ -63,8 +63,18 @@ let command = [
 
 ]
 // recuperer la div content
+const popupDiv = document.querySelector("#container-cart")
+document.querySelector("#btnPopup").addEventListener("click", (e) => {
+    if (popupDiv.classList.contains("active")) {
+        popupDiv.classList.remove("active")
+    } else {
+        popupDiv.classList.add("active")
+    }
+})
+
 const cartContent = document.querySelector(".item-container")
 
+localStorage.setItem("totalPrice", 0)
 
 command.map((item, index) => {
     // creation de la balise item
@@ -83,6 +93,8 @@ command.map((item, index) => {
             if (index > -1) {
                 itemDiv.remove()
                 delete command[index]
+                localStorage.setItem("totalPrice", parseInt(localStorage.getItem("totalPrice")) - item.price)
+                document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
                 return
             }
             saveCommandLocalStorage(command)
@@ -93,6 +105,8 @@ command.map((item, index) => {
         }
         pQuantity.innerHTML = command[index].quantity
         itemDiv.querySelector(".price").innerHTML = item.price * item.quantity + " €"
+        localStorage.setItem("totalPrice", parseInt(localStorage.getItem("totalPrice")) - item.price)
+        document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
     })
     quantityDiv.appendChild(pMinus)
     const pQuantity = document.createElement("p")
@@ -106,6 +120,8 @@ command.map((item, index) => {
         command[index].quantity++
         pQuantity.innerHTML = command[index].quantity
         itemDiv.querySelector(".price").innerHTML = item.price * item.quantity + " €"
+        localStorage.setItem("totalPrice", parseInt(localStorage.getItem("totalPrice")) + item.price)
+        document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
         saveCommandLocalStorage(command)
     })
     quantityDiv.appendChild(pPlus)
@@ -122,4 +138,9 @@ command.map((item, index) => {
     itemDiv.appendChild(pPrice)
     
     cartContent.appendChild(itemDiv)
+
+    
+    localStorage.setItem("totalPrice", parseInt(localStorage.getItem("totalPrice")) + item.price)
 })
+
+document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
