@@ -1,5 +1,13 @@
 const btnArray = document.querySelectorAll('.addToCartBtn')
-const orderArray = []
+let orderArray
+if (JSON.parse(localStorage.getItem(`Order`)) === null) {
+
+    localStorage.setItem("Order", JSON.stringify([]))
+    orderArray = JSON.parse(localStorage.getItem(`Order`))
+} else {
+
+    orderArray = JSON.parse(localStorage.getItem(`Order`))
+}
 
 
 for(let i=0 ; i< btnArray.length; i++){
@@ -19,26 +27,29 @@ function addToCart(choice) {
     
     const body = {
         name: name,
-        price:price.join(''),
+        price:parseFloat(price.join('')),
         quantity:1
     }
 
     
     for(let i = 0; i<orderArray.length; i++){
-        if(body.name === orderArray[i].name){
-            console.log("element found")
+        if (orderArray[i] != null || orderArray[i] != undefined) {
+            if(body.name === orderArray[i].name){
+                delete orderArray[i]
+                localStorage.setItem("Order", JSON.stringify(orderArray))
+                return
+            }
         }
     }
- 
 
+    
     orderArray.push(body)  
-   
+    
     localStorage.setItem("Order", JSON.stringify(orderArray))
+    console.log(JSON.parse(localStorage.getItem(`Order`)));
 
 }
 
-console.log(JSON.parse(
-    localStorage.getItem(`Order`)))
 
 
 
