@@ -9,10 +9,29 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style-menu.css">
+    <link rel="stylesheet" href="style-contact.css">
     <title>Menu</title>
 </head>
 
 <body>
+    <!------------Header section--------------->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
+                <h1>Au&nbsp;&nbsp;Resto</h1>
+            </div>
+            <nav>
+                <a href="./index-menu.html"><i class="fa-solid fa-house"></i><span>Accueil</span></a>
+                <a href="#menu"><i class="fa-solid fa-utensils"></i><span>Menu</span></a>
+                <a href="#contact"><i class="fa-solid fa-phone"></i><span>Contact</span></a>
+                <a href="#" id="btnPopup"><i class="fa-solid fa-cart-shopping"></i></a>
+            </nav>
+        </div>
+    </header>
+    <!------------Fin de section Header---------------->
+
+
     <section class="slider">
         <div class="container">
 
@@ -24,7 +43,7 @@
             <input type="radio" name="slider" class="d-none" id="s5">
 
             <div class="cards">
-                <label for="s1" id="slide1">
+                <label for="s1" id="slide1" class="sld">
                     <div class="card">
                         <div class="image">
                             <img src="assets/Aioli_provencal.jpg" alt="">
@@ -34,7 +53,7 @@
                         </div>
                         <div class="infos">
                             <span class="name">Aïoli</span>
-                            <span class="description">L'aïoli est une sauce à base d'olives noires, d'émulsion d'ail et
+                            <span class="description">L'aïoli est une sauce à base d'oeufs, d'émulsion d'ail et
                                 d'huile d'olive. </span>
                         </div>
                         <p class="prix">12€</p>
@@ -47,7 +66,7 @@
                     </div>
                 </label>
 
-                <label for="s2" id="slide2">
+                <label for="s2" id="slide2" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/bouillabaisse.jpg" alt="">
@@ -73,7 +92,7 @@
                     </div>
                 </label>
 
-                <label for="s3" id="slide3">
+                <label for="s3" id="slide3" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/hoummous.jpg" alt="">
@@ -99,7 +118,7 @@
                     </div>
                 </label>
 
-                <label for="s4" id="slide4">
+                <label for="s4" id="slide4" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/ratatouille.jpg" alt="">
@@ -125,7 +144,7 @@
                     </div>
                 </label>
 
-                <label for="s5" id="slide5">
+                <label for="s5" id="slide5" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/tapenade-olives-noires-provençale.jpg" alt="">
@@ -135,7 +154,8 @@
                         </div>
                         <div class="infos">
                             <span class="name">Tapenade</span>
-                            <span class="description">La tapenade est pilonnées avec de l'huile d'olive, des câpres de
+                            <span class="description">La tapenade est pilonnées avec de l'huile d'olive, des câpres
+                                de
                                 l'ail, des
                                 anchois et
                                 des herbes de Provence</span>
@@ -155,22 +175,17 @@
 
     </section>
 
-
-
-
-
-
-
     <!-- menu section starts  -->
 
     <section class="menu" id="menu">
 
         <h3 class="sub-heading"> Notre menu </h3>
-        <h1 class="heading"> Nos spécialités </h1>
+        <h1 class="heading"> Nos burgers </h1>
 
         <div class="box-container">
 
             <div class="box">
+
                 <div class="image">
                     <img src="assets/menu-1.jpg" alt="">
                     <a href="#" class="fas fa-heart"></a>
@@ -181,7 +196,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <!-- <i class="fas fa-star-half-alt"></i> -->
+                        <i class="fa-regular fa-star"></i>
                     </div>
                     <h3>Plat</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
@@ -240,9 +255,9 @@
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <!-- <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> -->
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                     </div>
                     <h3>Plat</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
@@ -356,7 +371,38 @@
     </section>
 
     <!-- menu section ends -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5824.20003264586!2d5.9284834455347655!3d43.1234251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c91b377a41323b%3A0x1662293030023b96!2sLa%20table%20de%20Lilith!5e0!3m2!1sfr!2sfr!4v1672757960869!5m2!1sfr!2sfr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
+            <div class="contact-formulaire">
+
+                <form class="form">
+                    <h2>CONTACTEZ-MOI</h2>
+                    <p type="Nom:"><input placeholder="Saisir le nom"></input></p>
+                    <p type="Email:"><input placeholder="Saisir l'email"></input></p>
+                    <p type="Message:"><input placeholder="Saisir le message"></input></p>
+                    <button class="team-btn">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--  -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <h2>Au&nbsp;&nbsp;Resto</h2>
+            </div>
+            <p>2023 © Restaurant Au Resto </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
