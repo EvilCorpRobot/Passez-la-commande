@@ -28,8 +28,8 @@ body {
 html{
     font-size: 62.5%;
     overflow-x: hidden;
-    scroll-padding-top: 5.5rem;
-    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;scroll-behavior: smooth;
+    
 }
 /*Header*/
 header{
@@ -45,8 +45,7 @@ header .header-content{
     max-width: 1400px;  
     justify-content: space-between;
     align-items: center;
-    margin: auto;
-    
+    margin: auto; 
 }
 
 nav{
