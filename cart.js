@@ -36,7 +36,6 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             if (item == null) {
                 return
             }
-            console.log(index)
             // creation de la balise item
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
