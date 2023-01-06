@@ -1,5 +1,6 @@
 const btnArray = document.querySelectorAll('.addToCartBtn')
 let orderArray
+
 if (JSON.parse(localStorage.getItem(`Order`)) === null) {
 
     localStorage.setItem("Order", JSON.stringify([]))
@@ -12,14 +13,15 @@ if (JSON.parse(localStorage.getItem(`Order`)) === null) {
 
 for(let i=0 ; i< btnArray.length; i++){
     btnArray[i].onclick = () => addToCart(btnArray[i])
+
 }
 
 
 
 function addToCart(choice) {
- const price = choice.parentElement.querySelector('.price').textContent.split('')
- price.shift()
- const name = choice.parentElement.querySelector('h3').textContent
+    const name = choice.parentElement.parentElement.querySelector('h3').textContent
+    const price = choice.parentElement.querySelector('.price').textContent.split('')
+    price.shift()
  
     console.log(name)
     console.log(price.join(''))
@@ -50,7 +52,22 @@ function addToCart(choice) {
 
 }
 
+//---------------------------//
+//----------SLIDER-----------//
+//---------------------------//
+
+const sliderBtnArray = document.querySelectorAll('.addToCartBtn-slider')
+console.log(sliderBtnArray)
+for(let i=0 ; i< sliderBtnArray.length; i++){
+    sliderBtnArray[i].onclick = () => sliderAddToCart(sliderBtnArray[i])
+
+}
 
 
-
-
+function sliderAddToCart(choice) {
+    const name = choice.parentElement.parentElement.querySelector('.infos .name').textContent
+    const price = choice.parentElement.parentElement.querySelector('.prix').textContent.split('')
+    price.pop()
+       console.log(name)
+       console.log(price.join(''))
+}   
