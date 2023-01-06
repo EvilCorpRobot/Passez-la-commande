@@ -234,7 +234,7 @@ a{
     border-radius: 10px;
     padding: 30px 35px;
 }
-.cards .card .socials .fa-cart-shopping:hover{
+.cards .card .socials .fa-cart-shopping:hover, .slider-checked:hover{
     font-size : 4.5rem;
 }
 .cards .card .socials .fa-heart:hover{
@@ -245,6 +245,18 @@ a{
 }
 .cards .card .socials .fa-share-nodes:hover{
     font-size : 4.5rem;
+}
+
+
+.slider-checked {
+    color: #27ae60 !important;
+}
+.slider-checked, .slider-no-checked {
+
+    transition: all 1.5s linear !important;
+}
+.slider-checked:active, .slider-no-checked:active {
+    transform: rotateY(180deg) !important;
 }
 
 

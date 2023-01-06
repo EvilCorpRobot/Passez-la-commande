@@ -16,15 +16,7 @@ for (let i = 0; i < btnArray.length; i++) {
     btnArray[i].classList.add("no-checked")
 }
 
-orderArray.forEach(item => {
-    if (item == null) {
-        return
-    }
-    const btn = btnArray[item.indexBtn]
-    btn.innerHTML = "&#x2714;"
-    btn.classList.remove("no-checked")
-    btn.classList.add("checked")
-});
+
 
 function addToCart(choice, indexBtn) {
 
@@ -53,7 +45,8 @@ function addToCart(choice, indexBtn) {
         name: name,
         price: parseFloat(price.join('')),
         quantity: 1,
-        indexBtn: indexBtn
+        indexBtn: indexBtn,
+        type: "box"
     }
 
 
@@ -84,7 +77,7 @@ const sliderBtnArray = document.querySelectorAll('.addToCartBtn-slider')
 console.log(sliderBtnArray)
 for (let i = 0; i < sliderBtnArray.length; i++) {
     sliderBtnArray[i].onclick = () => sliderAddToCart(sliderBtnArray[i], i)
-
+    sliderBtnArray[i].classList.add("slider-no-checked")
 }
 
 
@@ -96,7 +89,8 @@ function sliderAddToCart(choice, indexBtn) {
         name: name,
         price: parseFloat(price.join('')),
         quantity: 1,
-        indexBtn: indexBtn
+        indexBtn: indexBtn,
+        type: "slider"
     }
 
 
@@ -115,4 +109,23 @@ function sliderAddToCart(choice, indexBtn) {
     orderArray.push(body)
 
     localStorage.setItem("Order", JSON.stringify(orderArray))
-}   
+}
+
+orderArray.forEach(item => {
+    if (item == null) {
+        return
+    }
+    if (item.type === "box") {
+        const btn = btnArray[item.indexBtn]
+        btn.innerHTML = "&#x2714;"
+        btn.classList.remove("no-checked")
+        btn.classList.add("checked")
+    } else if (item.type === "slider") {
+        const btn = sliderBtnArray[item.indexBtn]
+        btn.innerHTML = "&#x2714;"
+        btn.classList.remove("fa-solid")
+        btn.classList.remove("fa-cart-shopping")
+        btn.classList.remove("slider-no-checked")
+        btn.classList.add("slider-checked")
+    }
+});
