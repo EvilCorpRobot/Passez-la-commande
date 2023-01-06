@@ -117,7 +117,7 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             cartContent.appendChild(itemDiv)
 
 
-            localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) + item.price) * 100) / 100)
+            localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) + (item.price * item.quantity)) * 100) / 100)
         })
         document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
         if (parseFloat(localStorage.getItem("totalPrice")) != 0) {
