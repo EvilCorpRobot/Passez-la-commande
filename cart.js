@@ -10,7 +10,7 @@ const cartContent = document.querySelector(".item-container")
 const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
 
-
+    
     const oldBtnSell = document.querySelector(".btn-sell")
     if (oldBtnSell != null) {
         oldBtnSell.remove()
@@ -39,7 +39,8 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             if (item == null) {
                 return
             }
-            console.log(index)
+
+
             // creation de la balise item
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
@@ -53,29 +54,25 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             pMinus.innerHTML = "&minus;"
             pMinus.addEventListener("click", (e) => {
                 if (command[index].quantity === 1) {
-                    if (index > -1) {
-                        itemDiv.remove()
-                        delete command[index]
-                        localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
-                        document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
-                        saveCommandLocalStorage(command)
-                        if (item.type === "box") {
-                            const btn = btnArray2[item.indexBtn]
-                            btn.innerHTML = "Panier"
-                            btn.classList.remove("checked")
-                            btn.classList.add("no-checked")
-                        } else if (item.type === "slider") {
-                            const btn = sliderBtnArray2[item.indexBtn]
-                            console.log(btn)
-                            btn.innerHTML = ""
-                            btn.classList.remove("slider-checked")
-                            btn.classList.add("fa-cart-shopping")
-                            btn.classList.add("fa-solid")
-                            btn.classList.add("slider-no-checked")
-                        }
-                        return
-                    }
+                    itemDiv.remove()
+                    delete command[index]
+                    localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
+                    document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
                     saveCommandLocalStorage(command)
+                    if (item.type === "box") {
+                        const btn = btnArray2[item.indexBtn]
+                        btn.innerHTML = "Panier"
+                        btn.classList.remove("checked")
+                        btn.classList.add("no-checked")
+                    } else if (item.type === "slider") {
+                        const btn = sliderBtnArray2[item.indexBtn]
+                        btn.innerHTML = ""
+                        btn.classList.remove("slider-checked")
+                        btn.classList.add("fa-cart-shopping")
+                        btn.classList.add("fa-solid")
+                        btn.classList.add("slider-no-checked")
+                    }
+                    return
 
                 } else {
                     command[index].quantity--

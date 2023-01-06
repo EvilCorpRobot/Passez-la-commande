@@ -39,7 +39,6 @@
     transition: 1s;
     color: white;
     border-color: green;
-
 }
 
 .form{
@@ -69,6 +68,9 @@
     text-align: start;
 }
 
+.form label{
+    font-size: 14px;
+}
 
 .form input{
     width:100%;
@@ -80,15 +82,31 @@
     border: #dedede70 2px solid;
     transition:all .3s;
     color: var(--color4);
+    font-size: 14px;
+}
+
+.form textarea{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    background: rgb(227, 227, 227);
+    outline:none;
+    resize:none;
+    border: #dedede70 2px solid;
+    transition:all .3s;
+    color: var(--color4);
+    font-size: 14px;
 }
 
 .form input::placeholder {
     color: black;
 }
 
-.form input:focus{
+.form input:focus,
+.form textarea:focus{
     border-bottom:2px solid black;
 }
+
 .form p:before{
     content:attr(type);
     display:block;

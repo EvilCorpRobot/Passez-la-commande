@@ -435,7 +435,7 @@ a{
     background: var(--black);
     border-radius: .5rem;
     cursor: pointer;
-    padding:.8rem 3rem;
+    padding:.8rem;
     transition: all .2s linear;
 }
 

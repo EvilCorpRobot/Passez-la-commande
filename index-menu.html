@@ -407,15 +407,15 @@
                 <form class="form">
                     <h2>CONTACTEZ-NOUS</h2>
                     <div>
-                    <label type="Nom:">Nom :</label><input placeholder="Saisir le nom"></input>
+                    <label for="name">Nom :</label><input type="text" name="name" placeholder="Saisir le nom" required></input>
                     </div>
                     <div>
-                        <label type="">Email :</label><input placeholder="Saisir l'email"></input>
+                        <label for="email">Email :</label><input type="email" name="email" placeholder="Saisir l'email" required></input>
                     </div>
                     <div>
-                        <label type="Message:">Message :<input placeholder="Saisir le message"></input>
+                        <label for="message">Message :</label><textarea type="text" name="message" placeholder="Saisir le message" required></textarea>
                     </div>
-                        <button class="team-btn">Envoyer</button>
+                        <input class="team-btn" value="Envoyer" type="submit">
                 </form>
             </div>
         </div>
@@ -452,5 +452,6 @@
 </body>
 <script src="./cart.js"></script>
 <script src="./addToCart.js"></script>
+<script src="./contact.js"></script>
 
 </html>

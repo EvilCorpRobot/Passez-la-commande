@@ -20,7 +20,7 @@ for (let i = 0; i < btnArray.length; i++) {
 
 function addToCart(choice, indexBtn) {
 
-
+    orderArray = JSON.parse(localStorage.getItem(`Order`))
     if (btnArray[indexBtn].classList.contains("no-checked")) {
         const btn = btnArray[indexBtn]
         btn.innerHTML = "&#x2714;"
@@ -33,12 +33,12 @@ function addToCart(choice, indexBtn) {
         btn.classList.add("no-checked")
     }
 
+
+
     const name = choice.parentElement.parentElement.querySelector('h3').textContent
     const price = choice.parentElement.querySelector('.price').textContent.split('')
     price.shift()
 
-    console.log(name)
-    console.log(price.join(''))
 
 
     const body = {
@@ -52,7 +52,6 @@ function addToCart(choice, indexBtn) {
 
     for (let i = 0; i < orderArray.length; i++) {
         if (orderArray[i] != null || orderArray[i] != undefined) {
-
             if (body.name === orderArray[i].name) {
                 delete orderArray[i]
                 localStorage.setItem("Order", JSON.stringify(orderArray))
@@ -65,7 +64,6 @@ function addToCart(choice, indexBtn) {
     orderArray.push(body)
 
     localStorage.setItem("Order", JSON.stringify(orderArray))
-    console.log(JSON.parse(localStorage.getItem(`Order`)));
 
 }
 
@@ -74,7 +72,6 @@ function addToCart(choice, indexBtn) {
 //---------------------------//
 
 const sliderBtnArray = document.querySelectorAll('.addToCartBtn-slider')
-console.log(sliderBtnArray)
 for (let i = 0; i < sliderBtnArray.length; i++) {
     sliderBtnArray[i].onclick = () => sliderAddToCart(sliderBtnArray[i], i)
     sliderBtnArray[i].classList.add("slider-no-checked")
@@ -82,6 +79,8 @@ for (let i = 0; i < sliderBtnArray.length; i++) {
 
 
 function sliderAddToCart(choice, indexBtn) {
+    
+    orderArray = JSON.parse(localStorage.getItem(`Order`))
     if (sliderBtnArray[indexBtn].classList.contains("slider-no-checked")) {
         const btn = sliderBtnArray[indexBtn]
         btn.innerHTML = "&#x2714;"
