@@ -1,11 +1,15 @@
 const saveCommandLocalStorage = (command) => {
-    
+
 }
 
 const cartContent = document.querySelector(".item-container")
 // recuperer la div content
 const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
+
+
+
+
     if (popupDiv.classList.contains("active")) {
         popupDiv.classList.remove("active")
         popupDiv.classList.add("hidden")
@@ -34,7 +38,7 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
             itemDiv.id = "item-" + index
-        
+
             //creation de l'ajout et la supression de la quantiter
             const quantityDiv = document.createElement("div")
             quantityDiv.classList.add("quantity")
@@ -46,19 +50,19 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
                     if (index > -1) {
                         itemDiv.remove()
                         delete command[index]
-                        localStorage.setItem("totalPrice", parseFloat(localStorage.getItem("totalPrice")) - item.price)
+                        localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
                         document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
                         return
                     }
                     saveCommandLocalStorage(command)
-                    
+
                 } else {
                     command[index].quantity--
                     saveCommandLocalStorage(command)
                 }
                 pQuantity.innerHTML = command[index].quantity
                 itemDiv.querySelector(".price").innerHTML = item.price * item.quantity + " €"
-                localStorage.setItem("totalPrice", parseFloat(localStorage.getItem("totalPrice")) - item.price)
+                localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
                 document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
             })
             quantityDiv.appendChild(pMinus)
@@ -73,14 +77,14 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
                 command[index].quantity++
                 pQuantity.innerHTML = command[index].quantity
                 itemDiv.querySelector(".price").innerHTML = item.price * item.quantity + " €"
-                localStorage.setItem("totalPrice", parseFloat(localStorage.getItem("totalPrice")) + item.price)
+                localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) + item.price) * 100) / 100)
                 document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
                 saveCommandLocalStorage(command)
             })
             quantityDiv.appendChild(pPlus)
             itemDiv.appendChild(quantityDiv)
-            
-            
+
+
             const pTitleItem = document.createElement("p")
             pTitleItem.classList.add("title-item")
             pTitleItem.innerHTML = item.name
@@ -89,13 +93,24 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             pPrice.innerHTML = item.price * item.quantity + " €"
             itemDiv.appendChild(pTitleItem)
             itemDiv.appendChild(pPrice)
-            
+
             cartContent.appendChild(itemDiv)
-        
-            
-            localStorage.setItem("totalPrice", parseFloat(localStorage.getItem("totalPrice")) + item.price)
+
+
+            localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) + item.price) * 100) / 100)
         })
         document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
+        if (parseFloat(localStorage.getItem("totalPrice")) != 0) {
+            console.log("patrick")
+            const sellBtn = document.createElement("button")
+            console.log(sellBtn)
+            sellBtn.textContent = "Payer"
+            sellBtn.classList.add("btn")
+            sellBtn.addEventListener("click", () => {
+                document.location = "/index-paiement.html"
+            })
+            document.querySelector("#content").appendChild(sellBtn)
+        }
     }
 })
 

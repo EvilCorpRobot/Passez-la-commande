@@ -10,31 +10,56 @@ if (JSON.parse(localStorage.getItem(`Order`)) === null) {
 }
 
 
-for(let i=0 ; i< btnArray.length; i++){
-    btnArray[i].onclick = () => addToCart(btnArray[i])
+for (let i = 0; i < btnArray.length; i++) {
+    btnArray[i].onclick = () => addToCart(btnArray[i], i)
+    btnArray[i].classList.add("no-checked")
 }
 
+orderArray.forEach(item => {
+    if (item == null) {
+        return
+    }
+    const btn = btnArray[item.indexBtn]
+    btn.innerHTML = "&#x2714;"
+    btn.classList.remove("no-checked")
+    btn.classList.add("checked")
+});
 
+function addToCart(choice, indexBtn) {
 
-function addToCart(choice) {
- const price = choice.parentElement.querySelector('.price').textContent.split('')
- price.shift()
- const name = choice.parentElement.querySelector('h3').textContent
- 
+    
+    if (btnArray[indexBtn].classList.contains("no-checked")) {
+        const btn = btnArray[indexBtn]
+        btn.innerHTML = "&#x2714;"
+        btn.classList.remove("no-checked")
+        btn.classList.add("checked")
+    } else {
+        const btn = btnArray[indexBtn]
+        btn.innerHTML = "Panier"
+        btn.classList.remove("checked")
+        btn.classList.add("no-checked")
+    }
+
+    const price = choice.parentElement.querySelector('.price').textContent.split('')
+    price.shift()
+    const name = choice.parentElement.querySelector('h3').textContent
+
     console.log(name)
     console.log(price.join(''))
 
-    
+
     const body = {
         name: name,
-        price:parseFloat(price.join('')),
-        quantity:1
+        price: parseFloat(price.join('')),
+        quantity: 1,
+        indexBtn: indexBtn
     }
 
-    
-    for(let i = 0; i<orderArray.length; i++){
+
+    for (let i = 0; i < orderArray.length; i++) {
         if (orderArray[i] != null || orderArray[i] != undefined) {
-            if(body.name === orderArray[i].name){
+
+            if (body.name === orderArray[i].name) {
                 delete orderArray[i]
                 localStorage.setItem("Order", JSON.stringify(orderArray))
                 return
@@ -42,9 +67,9 @@ function addToCart(choice) {
         }
     }
 
-    
-    orderArray.push(body)  
-    
+
+    orderArray.push(body)
+
     localStorage.setItem("Order", JSON.stringify(orderArray))
     console.log(JSON.parse(localStorage.getItem(`Order`)));
 

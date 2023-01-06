@@ -437,6 +437,24 @@ a{
     letter-spacing: .1rem;
 }
 
+.checked {
+    
+
+    background: var(--green);
+}
+
+.checked:active, .no-checked:active {
+    
+    transform: rotateX(360deg);
+    transition: all .6s linear;
+}
+
+.checked:hover {
+    
+    background: var(--black);
+}
+
+
 .menu .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -569,7 +587,7 @@ body {
 
 .item-container {
     width: 90%;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -622,6 +640,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    margin-top: 15px;
     padding-right: 163px;
 }
 
