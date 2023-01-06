@@ -9,10 +9,32 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style-menu.css">
+    <link rel="stylesheet" href="style-contact.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" type="image/x-icon">
     <title>Menu</title>
 </head>
 
 <body>
+    <!------------Header--------------->
+    <header>
+        <div class="header-content">
+            <a href="./index-menu.html">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
+                    <h1>Au&nbsp;&nbsp;Resto</h1>
+                </div>
+            </a>
+            <nav>
+                <a href="./index-menu.html"><i class="fa-solid fa-house"></i><span>Accueil</span></a>
+                <a href="#menu"><i class="fa-solid fa-utensils"></i><span>Menu</span></a>
+                <a href="#contact"><i class="fa-solid fa-phone"></i><span>Contact</span></a>
+                <a href="#" id="btnPopup"><i class="fa-solid fa-cart-shopping"></i></a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!------------Slider---------------->
     <section class="slider">
         <div class="container">
 
@@ -24,7 +46,7 @@
             <input type="radio" name="slider" class="d-none" id="s5">
 
             <div class="cards">
-                <label for="s1" id="slide1">
+                <label for="s1" id="slide1" class="sld">
                     <div class="card">
                         <div class="image">
                             <img src="assets/Aioli_provencal.jpg" alt="">
@@ -34,12 +56,12 @@
                         </div>
                         <div class="infos">
                             <span class="name">Aïoli</span>
-                            <span class="description">L'aïoli est une sauce à base d'olives noires, d'émulsion d'ail et
+                            <span class="description">L'aïoli est une sauce à base d'oeufs, d'émulsion d'ails et
                                 d'huile d'olive. </span>
                         </div>
                         <p class="prix">12€</p>
                         <div class="socials">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-cart-shopping addToCartBtn-slider addToCartBtn-slider1"></i>
                             <i class="fa-regular fa-heart"></i>
                             <i class="fa-regular fa-bookmark"></i>
                             <i class="fa-solid fa-share-nodes"></i>
@@ -47,7 +69,7 @@
                     </div>
                 </label>
 
-                <label for="s2" id="slide2">
+                <label for="s2" id="slide2" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/bouillabaisse.jpg" alt="">
@@ -65,7 +87,7 @@
                         </div>
                         <p class="prix">12€</p>
                         <div class="socials">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-cart-shopping addToCartBtn-slider addToCartBtn-slider2"></i>
                             <i class="fa-regular fa-heart"></i>
                             <i class="fa-regular fa-bookmark"></i>
                             <i class="fa-solid fa-share-nodes"></i>
@@ -73,7 +95,7 @@
                     </div>
                 </label>
 
-                <label for="s3" id="slide3">
+                <label for="s3" id="slide3" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/hoummous.jpg" alt="">
@@ -91,15 +113,14 @@
                         </div>
                         <p class="prix">12€</p>
                         <div class="socials">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-shopping addToCartBtn-slider addToCartBtn-slider3"></i>                            <i class="fa-regular fa-heart"></i>
                             <i class="fa-regular fa-bookmark"></i>
                             <i class="fa-solid fa-share-nodes"></i>
                         </div>
                     </div>
                 </label>
 
-                <label for="s4" id="slide4">
+                <label for="s4" id="slide4" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/ratatouille.jpg" alt="">
@@ -117,15 +138,14 @@
                         </div>
                         <p class="prix">12€</p>
                         <div class="socials">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-shopping addToCartBtn-slider addToCartBtn-slider4"></i>                            <i class="fa-regular fa-heart"></i>
                             <i class="fa-regular fa-bookmark"></i>
                             <i class="fa-solid fa-share-nodes"></i>
                         </div>
                     </div>
                 </label>
 
-                <label for="s5" id="slide5">
+                <label for="s5" id="slide5" class="slide">
                     <div class="card">
                         <div class="image">
                             <img src="assets/tapenade-olives-noires-provençale.jpg" alt="">
@@ -135,15 +155,15 @@
                         </div>
                         <div class="infos">
                             <span class="name">Tapenade</span>
-                            <span class="description">La tapenade est pilonnées avec de l'huile d'olive, des câpres de
+                            <span class="description">La tapenade est pilonnées avec de l'huile d'olive, des câpres
+                                de
                                 l'ail, des
                                 anchois et
                                 des herbes de Provence</span>
                         </div>
                         <p class="prix">12€</p>
                         <div class="socials">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-cart-shopping addToCartBtn-slider addToCartBtn-slider5"></i>                            <i class="fa-regular fa-heart"></i>
                             <i class="fa-regular fa-bookmark"></i>
                             <i class="fa-solid fa-share-nodes"></i>
                         </div>
@@ -155,21 +175,12 @@
 
     </section>
 
-
-
-
-
-
-
-    <!-- menu section starts  -->
-
+    <!-- Menu  -->
     <section class="menu" id="menu">
-
         <h3 class="sub-heading"> Notre menu </h3>
-        <h1 class="heading"> Nos spécialités </h1>
+        <h1 class="heading"> Nos plats </h1>
 
         <div class="box-container">
-
             <div class="box">
                 <div class="image">
                     <img src="assets/menu-1.jpg" alt="">
@@ -181,13 +192,16 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <!-- <i class="fas fa-star-half-alt"></i> -->
+                        <i class="fa-regular fa-star"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier
-                    </a>
-                    <span class="price">€12.99</span>
+                    <h3>Pizza Chorizo</h3>
+                   
+                    <p>Chorizo Emmental Mozzarella Crème Olives</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier
+                        </a>
+                        <span class="price">€11</span>
+                    </div>
                 </div>
             </div>
 
@@ -204,10 +218,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    
+                    <h3>Hamburger</h3>
+                    <p>Cheddar affiné 6 mois, oignons rouges, steak 100% viande Charolaise Française, sauce BBQ et un
+                        pain Signature préparé avec de la farine de blé Label Rouge.</p>
+                     <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier</a>
+                        <span class="price">€8.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -224,10 +242,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Crêpes</h3>
+                    <p>Choix : sucre, nutella, fruits de saison avec sa chantilly, crème de marrons</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier</a>
+                        <span class="price">€6.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -240,14 +260,17 @@
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <!-- <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> -->
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Gauffres</h3>
+                    <p>Choix : sucre, nutella, fruits de saison avec sa chantilly, crème de marrons</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier
+                        </a>
+                        <span class="price">€7.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -264,10 +287,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Gigant Cookies</h3>
+                    <p>Pépites de Chocolat, Double chocolat, Noix de Macadamia, Cheesecake & Framboise, Dragées
+                        Chocolatées (Rainbow Candy)</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier
+                        </a>
+                        <span class="price">€2.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -284,10 +311,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Baba</h3>
+                    <p>Savarin servi imbibé d'un sirop ou de rhum avec sa chantilly</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier</a>
+                        <span class="price">€7.99</span>
+                    </div>
                 </div>
             </div>
 
@@ -304,10 +333,13 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Trio d'alcool</h3>
+                    <p>Découvrez les saveurs de saisons (change en saison) </p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier
+                        </a>
+                        <span class="price">€15.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -324,10 +356,13 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Salade de fruits</h3>
+                    <p>Salade de fruits de saisons</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier
+                        </a>
+                        <span class="price">€6.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -344,10 +379,13 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Plat</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">Panier</a>
-                    <span class="price">€12.99</span>
+                    <h3>Jus de fruits maison</h3>
+                    <p>Choisissez parmi nos panels de parfums de saisons</p>
+                    <div class="btn-and-price">
+                        <a href="#" class="btn addToCartBtn">Panier
+                        </a>
+                        <span class="price">€6.50</span>
+                    </div>
                 </div>
             </div>
 
@@ -355,8 +393,66 @@
 
     </section>
 
-    <!-- menu section ends -->
+    <!-- Contact -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5824.20003264586!2d5.9284834455347655!3d43.1234251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c91b377a41323b%3A0x1662293030023b96!2sLa%20table%20de%20Lilith!5e0!3m2!1sfr!2sfr!4v1672757960869!5m2!1sfr!2sfr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
+            <div class="contact-formulaire">
+
+                <form class="form">
+                    <h2>CONTACTEZ-NOUS</h2>
+                    <div>
+                    <label for="name">Nom :</label><input type="text" name="name" placeholder="Saisir le nom" required></input>
+                    </div>
+                    <div>
+                        <label for="email">Email :</label><input type="email" name="email" placeholder="Saisir l'email" required></input>
+                    </div>
+                    <div>
+                        <label for="message">Message :</label><textarea type="text" name="message" placeholder="Saisir le message" required></textarea>
+                    </div>
+                        <input class="team-btn" value="Envoyer" type="submit">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
+                <h2>Au&nbsp;&nbsp;Resto</h2>
+            </div>
+            <p>2023 © Restaurant Au Resto </p>
+        </div>
+    </footer>
+    <!-- cart -->
+    <div id="container-cart" class="hidden">
+        <div id="cart">
+            <div id="content">
+                <p id="btnClose">&#x274C;</p>
+                <h1 id="title-cart">Panier</h1>
+                <div class="item-container">
+
+                </div>
+                <div id="footer">
+                    <div id="total-container">
+                        <p>Total : </p>
+                        <p id="price-total"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="./cart.js"></script>
+<script src="./addToCart.js"></script>
+<script src="./contact.js"></script>
 
 </html>
