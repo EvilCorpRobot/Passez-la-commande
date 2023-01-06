@@ -7,7 +7,10 @@ body {
     overflow-x: hidden;
     height: 100vh;
     font-family: 'Urbanist', sans-serif;
+    min-width: 370px;
+    scroll-behavior: smooth;
 }
+
 :root{
     --green:#27ae60;
     --black:#192a56;
@@ -29,14 +32,17 @@ html{
     overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
+    
 }
 /*Header*/
+
 header{
     background: white;
     position: fixed;
     width: 100%;
     z-index : 2;
-    box-shadow: 10px 10px 10px solid rgb(0, 0, 0) !important;
+
+    box-shadow: rgb(189, 189, 189) 0px 1px 10px;
 }
 
 header .header-content{
@@ -44,8 +50,7 @@ header .header-content{
     max-width: 1400px;  
     justify-content: space-between;
     align-items: center;
-    margin: auto;
-    
+    margin: auto; 
 }
 
 nav{
@@ -135,6 +140,7 @@ nav a span{
 
 section{
     padding:12rem 9%;
+    width: 100%;
 }
 
 section:nth-child(even){
@@ -172,13 +178,9 @@ a{
    
     .card .infos .name {
         font-size:20px;
-        padding-right:35%;
     }
     .card .infos .description {
         font-size : 10px;
-        text-align: center;
-        padding-right: 25%;
-
     }
 
     #slide1 {
@@ -209,7 +211,6 @@ a{
 
 
 .cards {
-
     position: relative;
     height: 500px;
     width: 430px;
@@ -230,7 +231,7 @@ a{
 }
 
 .cards .card{
-
+    width: 100%;
     position: relative;
     height: 100%;
     background-color: #323444;
@@ -268,7 +269,6 @@ a{
 }
 
 .card .image .dots{
-
     text-align: center;
 }
 
@@ -295,7 +295,7 @@ a{
 }
 
 .infos .name{
-
+    text-align: left;
     font-size: 30px;
     color: var(--current-color1);
     letter-spacing: 8px;
@@ -305,7 +305,7 @@ a{
 }
 
 .infos .description{
-
+    text-align: justify;
     font-size: 15px;
     color: #ECEAED;
     letter-spacing: 3px;
@@ -354,6 +354,7 @@ a{
     transform: translate3d(-70%, 0, -220px);
     --current-color1: #ECEAED;
     --current-color2: #404457;
+    border-radius: 50px;
 }
 
 #s1:checked~.cards #slide5,
@@ -365,6 +366,7 @@ a{
     transform: translate3d(-35%, 0, -120px);
     --current-color1: #ECEAED;
     --current-color2: #404457;
+    border-radius: 50px;
 }
 
 #s1:checked~.cards #slide1,
@@ -376,6 +378,7 @@ a{
     transform: translate3d(0, 0, 0);
     --current-color1: #fad00c;
     --current-color2: #ECEAED;
+    border-radius: 50px;
 }
 
 #s1:checked~.cards #slide2,
@@ -387,6 +390,7 @@ a{
     transform: translate3d(35%, 0, -120px);
     --current-color1: #ECEAED;
     --current-color2: #404457;
+    border-radius: 50px;
 }
 
 #s1:checked~.cards #slide3,
@@ -398,6 +402,7 @@ a{
     transform: translate3d(70%, 0, -220px);
     --current-color1: #ECEAED;
     --current-color2: #404457;
+    border-radius: 50px;
 }
 
 
@@ -412,7 +417,7 @@ a{
 
 .heading{
     text-align: center;
-    color:var(--black);
+    color: #fad00c;
     font-size: 3rem;
     padding-bottom: 2rem;
     text-transform: uppercase;
@@ -534,7 +539,7 @@ a{
     margin-left: 1rem;
     font-size: 2.5rem;
 }
-/* cart */
+
 body {
     position: relative;
 }
@@ -632,6 +637,7 @@ body {
     user-select: none;
 }
 
+
 #footer {
     width: 100%;
 }
@@ -687,6 +693,10 @@ footer .logo h2{
     color: #fff;
     margin: 10px;
     font-size: 25px;
+}
+
+footer .logo img{
+    height: 35px;
 }
 
 footer .logo{

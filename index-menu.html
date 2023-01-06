@@ -14,13 +14,15 @@
 </head>
 
 <body>
-    <!------------Header section--------------->
+    <!------------Header--------------->
     <header>
         <div class="header-content">
-            <div class="logo">
-                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
-                <h1>Au&nbsp;&nbsp;Resto</h1>
-            </div>
+            <a href="./index-menu.html">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
+                    <h1>Au&nbsp;&nbsp;Resto</h1>
+                </div>
+            </a>
             <nav>
                 <a href="./index-menu.html"><i class="fa-solid fa-house"></i><span>Accueil</span></a>
                 <a href="#menu"><i class="fa-solid fa-utensils"></i><span>Menu</span></a>
@@ -29,9 +31,9 @@
             </nav>
         </div>
     </header>
-    <!------------Fin de section Header---------------->
 
 
+    <!------------Slider---------------->
     <section class="slider">
         <div class="container">
 
@@ -171,17 +173,14 @@
         </div>
 
     </section>
-    <!-- menu section starts  -->
 
+    <!-- Menu  -->
     <section class="menu" id="menu">
-
         <h3 class="sub-heading"> Notre menu </h3>
         <h1 class="heading"> Nos plats </h1>
 
         <div class="box-container">
-
             <div class="box">
-
                 <div class="image">
                     <img src="assets/menu-1.jpg" alt="">
                     <a href="#" class="fas fa-heart"></a>
@@ -368,7 +367,7 @@
 
     </section>
 
-    <!-- menu section ends -->
+    <!-- Contact -->
     <section id="contact">
         <div class="contact-container">
             <div class="contact-map">
@@ -381,20 +380,27 @@
             <div class="contact-formulaire">
 
                 <form class="form">
-                    <h2>CONTACTEZ-MOI</h2>
-                    <p type="Nom:"><input placeholder="Saisir le nom"></input></p>
-                    <p type="Email:"><input placeholder="Saisir l'email"></input></p>
-                    <p type="Message:"><input placeholder="Saisir le message"></input></p>
-                    <button class="team-btn">Envoyer</button>
+                    <h2>CONTACTEZ-NOUS</h2>
+                    <div>
+                    <label type="Nom:"></label><input placeholder="Saisir le nom"></input>
+                    </div>
+                    <div>
+                        <label type="Email:"></label><input placeholder="Saisir l'email"></input>
+                    </div>
+                    <div>
+                        <label type="Message:"><input placeholder="Saisir le message"></input>
+                    </div>
+                        <button class="team-btn">Envoyer</button>
                 </form>
             </div>
         </div>
     </section>
-    <!--  -->
+
+    <!-- Footer  -->
     <footer>
         <div class="footer-content">
             <div class="logo">
-                <i class="fa-solid fa-utensils"></i>
+                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
                 <h2>Au&nbsp;&nbsp;Resto</h2>
             </div>
             <p>2023 © Restaurant Au Resto </p>
@@ -421,4 +427,5 @@
 </body>
 <script src="./cart.js"></script>
 <script src="./addToCart.js"></script>
+
 </html>
