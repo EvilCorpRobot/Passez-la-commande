@@ -8,7 +8,9 @@ body {
     height: 100vh;
     font-family: 'Urbanist', sans-serif;
     min-width: 370px;
+    scroll-behavior: smooth;
 }
+
 :root{
     --green:#27ae60;
     --black:#192a56;

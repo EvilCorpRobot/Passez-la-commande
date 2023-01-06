@@ -7,6 +7,15 @@
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
+ 
+}
+
+.contact-formulaire div{
+    margin: 25px 0;
+}
+
+.contact-formulaire h2{
+    font-size: 20px;
 }
 
 .team-btn {
@@ -44,6 +53,7 @@
     box-sizing:border-box;
     position:relative;
     color: black;
+    background: white;
 }
 
 .form h2{
