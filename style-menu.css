@@ -437,7 +437,6 @@ a{
     letter-spacing: .1rem;
 }
 
-
 .menu .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -531,7 +530,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 20px;
 }
 
 .hidden {
@@ -607,6 +606,7 @@ body {
 }
 
 .minus, .plus{
+    height: 25px;
     color: white;
     border: 1px solid black;
     background-color: blueviolet;
