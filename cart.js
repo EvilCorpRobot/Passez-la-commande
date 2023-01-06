@@ -1,5 +1,5 @@
 const saveCommandLocalStorage = (command) => {
-
+    localStorage.setItem("Order", JSON.stringify(command))
 }
 
 const cartContent = document.querySelector(".item-container")
@@ -55,6 +55,7 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
                         delete command[index]
                         localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
                         document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
+                        saveCommandLocalStorage(command)
                         return
                     }
                     saveCommandLocalStorage(command)
