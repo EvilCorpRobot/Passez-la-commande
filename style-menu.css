@@ -459,6 +459,11 @@ a{
     background: var(--black);
 }
 
+.btn-and-price{
+    position: absolute;
+    bottom : 1.5rem;
+    left : 1.5rem;
+}
 
 .menu .box-container{
     display: grid;
@@ -470,7 +475,9 @@ a{
     background: #fff;
     border:.1rem solid rgba(0,0,0,.2);
     border-radius: .5rem;
-    box-shadow: var(--box-shadow);    
+    box-shadow: var(--box-shadow); 
+    position: relative;   
+    height: 500px;
 }
 
 .menu .box-container .box .image{

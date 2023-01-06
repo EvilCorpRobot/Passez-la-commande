@@ -1,5 +1,6 @@
 const btnArray = document.querySelectorAll('.addToCartBtn')
 let orderArray
+
 if (JSON.parse(localStorage.getItem(`Order`)) === null) {
 
     localStorage.setItem("Order", JSON.stringify([]))
@@ -27,7 +28,7 @@ orderArray.forEach(item => {
 
 function addToCart(choice, indexBtn) {
 
-    
+
     if (btnArray[indexBtn].classList.contains("no-checked")) {
         const btn = btnArray[indexBtn]
         btn.innerHTML = "&#x2714;"
@@ -40,9 +41,9 @@ function addToCart(choice, indexBtn) {
         btn.classList.add("no-checked")
     }
 
+    const name = choice.parentElement.parentElement.querySelector('h3').textContent
     const price = choice.parentElement.querySelector('.price').textContent.split('')
     price.shift()
-    const name = choice.parentElement.querySelector('h3').textContent
 
     console.log(name)
     console.log(price.join(''))
@@ -75,7 +76,43 @@ function addToCart(choice, indexBtn) {
 
 }
 
+//---------------------------//
+//----------SLIDER-----------//
+//---------------------------//
+
+const sliderBtnArray = document.querySelectorAll('.addToCartBtn-slider')
+console.log(sliderBtnArray)
+for (let i = 0; i < sliderBtnArray.length; i++) {
+    sliderBtnArray[i].onclick = () => sliderAddToCart(sliderBtnArray[i], i)
+
+}
 
 
+function sliderAddToCart(choice, indexBtn) {
+    const name = choice.parentElement.parentElement.querySelector('.infos .name').textContent
+    const price = choice.parentElement.parentElement.querySelector('.prix').textContent.split('')
+    price.pop()
+    const body = {
+        name: name,
+        price: parseFloat(price.join('')),
+        quantity: 1,
+        indexBtn: indexBtn
+    }
 
 
+    for (let i = 0; i < orderArray.length; i++) {
+        if (orderArray[i] != null || orderArray[i] != undefined) {
+
+            if (body.name === orderArray[i].name) {
+                delete orderArray[i]
+                localStorage.setItem("Order", JSON.stringify(orderArray))
+                return
+            }
+        }
+    }
+
+
+    orderArray.push(body)
+
+    localStorage.setItem("Order", JSON.stringify(orderArray))
+}   
