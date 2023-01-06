@@ -11,7 +11,7 @@ const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
 
     
-    const oldBtnSell = document.querySelector(".btn-sell")
+    let oldBtnSell = document.querySelector(".btn-sell")
     if (oldBtnSell != null) {
         oldBtnSell.remove()
     }
@@ -72,6 +72,8 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
                         btn.classList.add("fa-solid")
                         btn.classList.add("slider-no-checked")
                     }
+                    oldBtnSell = document.querySelector(".btn-sell")
+                    oldBtnSell.remove()
                     return
 
                 } else {
