@@ -82,6 +82,22 @@ for (let i = 0; i < sliderBtnArray.length; i++) {
 
 
 function sliderAddToCart(choice, indexBtn) {
+    if (sliderBtnArray[indexBtn].classList.contains("slider-no-checked")) {
+        const btn = sliderBtnArray[indexBtn]
+        btn.innerHTML = "&#x2714;"
+        btn.classList.remove("fa-cart-shopping")
+        btn.classList.remove("fa-solid")
+        btn.classList.remove("slider-no-checked")
+        btn.classList.add("slider-checked")
+    } else {
+        const btn = sliderBtnArray[indexBtn]
+        btn.innerHTML = ""
+        btn.classList.remove("slider-checked")
+        btn.classList.add("fa-cart-shopping")
+        btn.classList.add("fa-solid")
+        btn.classList.add("slider-no-checked")
+    }
+    
     const name = choice.parentElement.parentElement.querySelector('.infos .name').textContent
     const price = choice.parentElement.parentElement.querySelector('.prix').textContent.split('')
     price.pop()

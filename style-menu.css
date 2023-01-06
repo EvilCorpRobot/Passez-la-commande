@@ -251,13 +251,7 @@ a{
 .slider-checked {
     color: #27ae60 !important;
 }
-.slider-checked, .slider-no-checked {
 
-    transition: all 1.5s linear !important;
-}
-.slider-checked:active, .slider-no-checked:active {
-    transform: rotateY(180deg) !important;
-}
 
 
 .card .image{
