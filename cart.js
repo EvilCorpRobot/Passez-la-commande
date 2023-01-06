@@ -8,7 +8,10 @@ const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
 
 
-
+    const oldBtnSell = document.querySelector(".btn-sell")
+    if (oldBtnSell != null) {
+        oldBtnSell.remove()
+    }
 
     if (popupDiv.classList.contains("active")) {
         popupDiv.classList.remove("active")
@@ -101,11 +104,11 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
         })
         document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
         if (parseFloat(localStorage.getItem("totalPrice")) != 0) {
-            console.log("patrick")
+            
             const sellBtn = document.createElement("button")
-            console.log(sellBtn)
             sellBtn.textContent = "Payer"
             sellBtn.classList.add("btn")
+            sellBtn.classList.add("btn-sell")
             sellBtn.addEventListener("click", () => {
                 document.location = "/index-paiement.html"
             })

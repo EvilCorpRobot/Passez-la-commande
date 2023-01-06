@@ -127,9 +127,7 @@ nav a span{
     
     header nav .fa-cart-shopping {
         color:  #fad00c;
-        background-color: #000000;
         padding: 5px;
-        border: 3px solid black;
     }
 
     nav a span{
@@ -172,9 +170,7 @@ a{
 }
 
 @media (max-width:768px) {
-    .infos {
-        width:300px;
-    }
+    
    
     .card .infos .name {
         font-size:20px;
