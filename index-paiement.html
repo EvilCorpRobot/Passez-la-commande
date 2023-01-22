@@ -19,14 +19,14 @@
     <!------------Header section--------------->
     <header>
         <div class="header-content">
+            <a href="./index.html">
             <div class="logo">
                 <img src="https://cdn-icons-png.flaticon.com/512/3063/3063287.png" alt="">
                 <h1>Au&nbsp;&nbsp;Resto</h1>
             </div>
+        </a>
             <nav>
-                <a href="./index-menu.html"><i class="fa-solid fa-house"></i><span>Accueil</span></a>
-                <a href="#menu"><i class="fa-solid fa-utensils"></i><span>Menu</span></a>
-                <a href="#contact"><i class="fa-solid fa-phone"></i><span>Contact</span></a>
+                <a href="./index.html"><i class="fa-solid fa-house"></i></a>
             </nav>
         </div>
     </header>
@@ -42,12 +42,12 @@
 
             <div class="inputBox">
                 <div class="input">
-                    <span>Nom</span>
-                    <input type="text" placeholder="entrez votre nom">
+                    <span>Nom*</span>
+                    <input type="text" placeholder="Jean" required>
                 </div>
                 <div class="input">
-                    <span>Prénom</span>
-                    <input type="text" placeholder="entrez votre prénom">
+                    <span>Prénom*</span>
+                    <input type="text" placeholder="Dupont" required>
                 </div>
             </div>
             <div class="inputBox">
@@ -56,29 +56,37 @@
                     <p id="total"></p>
                 </div>
                 <div class="input">
-                    <span>Numéro de carte bancaire</span>
-                    <input type="text" placeholder="N° de carte bancaire">
+                    <span>Numéro de carte bancaire*</span>
+                    <input type="text" placeholder="N° de carte bancaire" required>
                 </div>
             </div>
             <div class="inputBox">
                 <div class="input">
-                    <span>Date d'expiration</span>
-                    <input type="month">
+                    <span>Date d'expiration*</span>
+                    <input type="month" placeholder="MM/AAAA" required>
                 </div>
                 <div class="input">
-                    <span>Cryptogramme</span>
-                    <input type="text" placeholder="code inscrit au dos de votre carte" >
+                    <span>Cryptogramme*</span>
+                    <input type="text" placeholder="Code inscrit au dos de votre carte" required>
                 </div>
             </div>
             <div class="inputBox">
                 <div class="input">
-                    <span>votre adresse</span>
-                    <textarea name="" placeholder="entrez votre adresse" id="" cols="30" rows="10"></textarea>
+                    <div>
+                        <span>votre adresse*</span>
+                        <input name="" placeholder="7 rue de la paix" id=""  required>
+                    </div>
+                    <div>
+                        <span>code postal*</span>
+                        <input name="" placeholder="75000" id="" required>
+                    </div>
                 </div>
+
                 <div class="input">
-                    <span>votre message</span>
-                    <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
+                    <span>Ajouter des instructions</span>
+                    <textarea name="" placeholder="Entrez votre message" id="" cols="30" rows="10"></textarea>
                 </div>
+
             </div>
 
 

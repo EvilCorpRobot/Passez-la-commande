@@ -6,21 +6,15 @@ form.onsubmit = (e) => {
 
     const messageContainer = document.createElement('div')
     document.querySelector('.contact-formulaire').appendChild(messageContainer)
-    messageContainer.style.background = 'lightgreen'
-    messageContainer.style.border = "1px solid black"
-    messageContainer.style.padding = '20px'
-    messageContainer.style.boxShadow = '0px 0px 10px lightgrey'
+   
+    messageContainer.style.padding = '10px'
 
 
+    messageContainer.innerHTML = `<div id="success" style="padding : 0"><div id='check'>&#x2713;</div><h3 class="sub-heading" style="margin-top: 25px "> Votre message a été envoyé avec succées !</h3></div>`
+    
+    success.style.cssText = "padding : 0 !important;"
+    check.style.cssText ="width : fit-content; background :green; color : white; font-weight: 600;font-size : 50px; text-align : center; margin : auto; padding : 0 17px; border-radius : 50%"
 
-    const messageText = document.createElement('p')
-    messageContainer.appendChild(messageText)
-    messageContainer.style.color = 'white'
-    messageContainer.style.textAlign = 'center'
-    messageContainer.style.fontSize = '16px'
-    messageContainer.style.fontWeight = '600'
-
-
-    messageText.textContent ="Merci ! Nous avons bien reçu votre message."
+    
 
 } 

@@ -1,5 +1,9 @@
 const saveCommandLocalStorage = (command) => {
     localStorage.setItem("Order", JSON.stringify(command))
+    if(localStorage.getItem("totalPrice") == 0){
+        oldBtnSell = document.querySelector(".btn-sell")
+        oldBtnSell.style.display="none"
+    }
 }
 
 const btnArray2 = document.querySelectorAll('.addToCartBtn')
@@ -9,12 +13,14 @@ const cartContent = document.querySelector(".item-container")
 // recuperer la div content
 const popupDiv = document.querySelector("#container-cart")
 document.querySelector("#btnPopup").addEventListener("click", (e) => {
-
+  
     
     let oldBtnSell = document.querySelector(".btn-sell")
     if (oldBtnSell != null) {
         oldBtnSell.remove()
     }
+
+  
 
     if (popupDiv.classList.contains("active")) {
         popupDiv.classList.remove("active")
@@ -53,12 +59,17 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             pMinus.classList.add("minus")
             pMinus.innerHTML = "&minus;"
             pMinus.addEventListener("click", (e) => {
+                
+                
                 if (command[index].quantity === 1) {
                     itemDiv.remove()
                     delete command[index]
                     localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
                     document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
                     saveCommandLocalStorage(command)
+
+
+                    
                     if (item.type === "box") {
                         const btn = btnArray2[item.indexBtn]
                         btn.innerHTML = "Panier"
@@ -72,8 +83,7 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
                         btn.classList.add("fa-solid")
                         btn.classList.add("slider-no-checked")
                     }
-                    oldBtnSell = document.querySelector(".btn-sell")
-                    oldBtnSell.remove()
+                    
                     return
 
                 } else {
@@ -84,7 +94,9 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
                 itemDiv.querySelector(".price").innerHTML = item.price * item.quantity + " €"
                 localStorage.setItem("totalPrice", Math.round((parseFloat(localStorage.getItem("totalPrice")) - item.price) * 100) / 100)
                 document.querySelector("#price-total").innerHTML = localStorage.getItem("totalPrice") + " €"
+             
             })
+           
             quantityDiv.appendChild(pMinus)
             const pQuantity = document.createElement("p")
             pQuantity.classList.add("nbr")
@@ -108,9 +120,10 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
             const pTitleItem = document.createElement("p")
             pTitleItem.classList.add("title-item")
             pTitleItem.innerHTML = item.name
+         
             const pPrice = document.createElement("p")
             pPrice.classList.add("price")
-            pPrice.innerHTML = item.price * item.quantity + " €"
+            pPrice.innerHTML = item.price * item.quantity + "&nbsp;€"
             itemDiv.appendChild(pTitleItem)
             itemDiv.appendChild(pPrice)
 

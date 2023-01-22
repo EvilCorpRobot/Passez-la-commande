@@ -555,7 +555,7 @@ body {
 
 .active {
     position: fixed;
-    width: 98%;
+    width: 100%;
     height: 100%;
     top: 0px;
     background-color: rgba(0, 0, 0, 0.431);
@@ -575,8 +575,22 @@ body {
     height: 70%;
     background-color: whitesmoke;
     border-radius: 20px;
+    min-width: 370px ;
 }
 
+@media (max-width: 692px){
+    #cart {
+        position: relative;
+        width: 95%;
+
+        height: 70%;
+        background-color: whitesmoke;
+        border-radius: 20px;
+    }
+    .quantity{
+        margin: 0 5px !important;
+    }
+}
 #content {
     width: 100%;
     height: 100%;
@@ -609,7 +623,14 @@ body {
     border-bottom: 1px solid black;
 }
 
+.title-item{
+    text-align: center;
+}
 
+.price{
+color: #27ae60;
+font-weight: 600;
+}
 
 #title-cart {
     width: 90%;
@@ -622,6 +643,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 10px 0px;
 }
 
@@ -630,20 +652,34 @@ body {
     display: flex;
     width: 100px;
     justify-content: space-between;
-    margin-left: 60px;
+    margin-right: 20px;
 }
 
-.price {
-    margin-right: 60px;
-}
+
 
 .minus, .plus{
-    height: 25px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 8px;
     color: white;
-    border: 1px solid black;
-    background-color: blueviolet;
+    border-radius: 50%;
+    background-color: #fad00c;
     -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #bdbdbd;
+    transition: 400ms;
+}
+
+.minus:hover, .plus:hover{
+    transform: scale(1.10);
+
+}
+
+.minus:active, .plus:active{
+    box-shadow: inset 2px 2px 1px #818181b4;
+    transform: scale(1.07);
+
 }
 
 
