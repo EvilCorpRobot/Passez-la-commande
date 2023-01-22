@@ -20,8 +20,6 @@ document.querySelector("#btnPopup").addEventListener("click", (e) => {
         oldBtnSell.remove()
     }
 
-  
-
     if (popupDiv.classList.contains("active")) {
         popupDiv.classList.remove("active")
         popupDiv.classList.add("hidden")
